@@ -1,4 +1,11 @@
 import React, { useState } from "react";
+import styled from 'styled-components';
+
+const List = styled.ul`
+list-styled: none;
+padding: 0
+`
+
 interface Props {
   items: string[];
   heading: string;
@@ -16,7 +23,7 @@ const ListGroup = ({ items, heading, onSelectItem}: Props) => {
   return (
     <>
       <h1>{heading}</h1>
-      <ul className="list-group">
+      <List>
         {listItem.map((list, index) => (
           <li
             className={
@@ -33,7 +40,7 @@ const ListGroup = ({ items, heading, onSelectItem}: Props) => {
             {list}
           </li>
         ))}
-      </ul>
+      </List>
     </>
   );
 };

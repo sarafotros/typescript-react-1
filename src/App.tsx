@@ -9,12 +9,23 @@ function App() {
   const handleSelectItem = (item: string) => {
     console.log(item);
   };
+  const [showBtn, setShowBtn] = useState(false);
+  const handleBtn = () => {
+    setShowBtn(true);
+  };
+  const handleClose = () => {
+    setShowBtn(false)
+  }
+  
   return (
     <div>
-      <Button  onClickHandler={() => console.log("clicked")}>My Button</Button>
-      <Alert>
-        Hello <span>World</span>
-      </Alert>
+      {showBtn && (
+        <Alert onClose={handleClose}>
+          Hello <span>World</span>
+        </Alert>
+      )}
+      <Button onClickHandler={handleBtn}>My Button</Button>
+
       <ListGroup
         items={listItem}
         heading="Cities"
