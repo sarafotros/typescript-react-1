@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
+import LikeBtn from "./components/LikeBtn/LikeBtn";
 import ListGroup from "./components/ListGroup";
 import Message from "./Message";
 
@@ -14,9 +15,13 @@ function App() {
     setShowBtn(true);
   };
   const handleClose = () => {
-    setShowBtn(false)
-  }
-  
+    setShowBtn(false);
+  };
+
+  const clickLike = () => {
+    console.log("clicked");
+  };
+
   return (
     <div>
       {showBtn && (
@@ -31,6 +36,7 @@ function App() {
         heading="Cities"
         onSelectItem={handleSelectItem}
       />
+      <LikeBtn onClicked={clickLike}/>
     </div>
   );
 }
