@@ -1,44 +1,44 @@
-import { useState } from "react";
-import Alert from "./components/Alert";
-import Button from "./components/Button";
-import LikeBtn from "./components/LikeBtn/LikeBtn";
-import ListGroup from "./components/ListGroup";
-import Message from "./Message";
+import React, { useEffect, useState } from "react";
+import AddBasket from "./demo/AddBasket";
+import Alert from "./demo/Alert";
+import ButtonDemo from "./demo/ButtonDemo";
+import Cart from "./demo/Cart";
+import ListGroup from "./demo/ListGroup";
+import Message from "./demo/Message";
+import NavBar from "./demo/NavBar";
+import ProductList from "./demo/ProductList";
 
-function App() {
-  const listItem = ["London", "paris", "New York", "Sydney"];
+const App = () => {
+  const listItem = ["Card", "Mug", "Chocklate", "Alcohol"];
+  const factoies = ["Guernsey", "Arena", "DPS", "Tamworth"];
+
   const handleSelectItem = (item: string) => {
     console.log(item);
   };
-  const [showBtn, setShowBtn] = useState(false);
-  const handleBtn = () => {
-    setShowBtn(true);
-  };
-  const handleClose = () => {
-    setShowBtn(false);
-  };
-
-  const clickLike = () => {
-    console.log("clicked");
-  };
-
+  // const [cartItems, setCartItems] = useState(listItem);
+  
   return (
     <div>
-      {showBtn && (
-        <Alert onClose={handleClose}>
-          Hello <span>World</span>
-        </Alert>
-      )}
-      <Button onClickHandler={handleBtn}>My Button</Button>
+      Demo App
+      {/* <Message text={"text1"}/>
+      <Message text={"text2"}/> */}
 
-      <ListGroup
-        items={listItem}
-        heading="Cities"
-        onSelectItem={handleSelectItem}
-      />
-      <LikeBtn onClicked={clickLike}/>
+      {/* <Alert onClose={()=>console.log("alert clicked")}>
+        Alert <span>Demo</span>
+      </Alert> */}
+
+      {/* <ProductList heading="List" items={listItem}/>
+      <ProductList heading="List" items={factoies}/> */}
+
+      {/* <ListGroup heading="Products:" items={listItem} /> 
+      <ListGroup heading="Factories:" items={factoies} />  */}
+  
+      {/* <AddBasket/> */}
+
+      {/* <NavBar cartItemsCount={cartItems.length} />
+      <Cart cartItems={cartItems} onClear={() => setCartItems([])} /> */}
     </div>
   );
-}
+};
 
 export default App;
