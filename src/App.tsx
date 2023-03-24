@@ -15,8 +15,8 @@ const App = () => {
   const handleSelectItem = (item: string) => {
     console.log(item);
   };
-  // const [cartItems, setCartItems] = useState(listItem);
-  
+  const [cartItems, setCartItems] = useState(listItem);
+
   return (
     <div>
       Demo App
@@ -27,8 +27,8 @@ const App = () => {
         Alert <span>Demo</span>
       </Alert> */}
 
-      {/* <ProductList heading="List" items={listItem}/>
-      <ProductList heading="List" items={factoies}/> */}
+      {/* <ProductList heading="List 1" items={listItem}/>
+      <ProductList heading="List 2" items={factoies}/> */}
 
       {/* <ListGroup heading="Products:" items={listItem} /> 
       <ListGroup heading="Factories:" items={factoies} />  */}

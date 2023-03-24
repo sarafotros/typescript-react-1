@@ -7,7 +7,7 @@ const AddBasket = () => {
   });
 
   const handleAddToCart = () => {
-    // basket.amount = 1
+    // basket.amount =  basket.amount+1
     // setBasket(basket)
     console.log(basket.amount);
     setBasket({ ...basket, amount: basket.amount+1 });
